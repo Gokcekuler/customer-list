@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title  </title>
+</head>
+<body>
+
+	{% for musteri in musteris %}
+		{{ musteri.id}}<br>
+		<a href="{{musteri.get_absolute_url}}">{{ musteri.tc}} </a><br>
+                {{ musteri.isim}}<br>
+                {{ musteri.soyisim}}<br>
+                {{ musteri.telefon}}<br>
+                {{ musteri.sehir}}<br>
+                {{ musteri.ilce}}<br>
+	{% endfor %}
+	
+    <div class="row">
+	    <div class="col-md-6 col-md-offset-3">
+		<div class="pagination">
+		    <span class="step-links">
+		        {% if musteris.has_previous %}
+		            <a href="?page={{ musteris.previous_page_number }}">previous</a>
+		        {% endif %}
+
+		        <span class="current">
+		            Page {{ musteris.number }} of {{ musteris.paginator.num_pages }}.
+		        </span>
+
+		        {% if musteris.has_next %}
+		            <a href="?page={{ musteris.next_page_number }}">next</a>
+		        {% endif %}
+		    </span>
+		</div>
+	</div>
+    </div>	
+
+</body>
+</html>
+
