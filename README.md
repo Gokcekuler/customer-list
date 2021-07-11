@@ -1,14 +1,10 @@
 # customer-list
-Müşteri kayıtlarını listeleyen, ekleme,silme,güncelleme işlemlerinin yapılabildiği örnek bir uygulamadır.
-kayıtları listelemek için
-http://127.0.0.1:8000/musteri/index/
-admin sayfası için
-http://127.0.0.1:8000/admin/
-kayıt eklemek için
-http://127.0.0.1:8000/musteri/create/
-güncellemek için
-http://127.0.0.1:8000/musteri/9/update/
-buradaki 9 örnek olarak verilmiş olup güncellenmek istenilen id numarası belirtilmelidir.Bazı id numaraları (3,4,5,7,8) delete metodu kontrolü için silinmiştir.
-silmek için
-http://127.0.0.1:8000/musteri/9/delete/
-buradaki 9 yerine istenilen id numarası verilerek silme işlemi gerçekleştirilebilir
+Müşteri kayıt formu için örnek bir Django projesidir. Sisteme giriş yaptıktan sonra yeni bir müşteri eklenebilir, var olan müşteriler güncellenebilir ve silinebilir. Ayrıca müşteri hakkında detay bilgiye ulaşılabilir. Müşteri Listesinde ad, soyad, id, tc, şehir ve ilçe ismine göre arama yapılabilir. <br> <br>
+## Çalıştırma Komutları
+Çalıştırılması için sıra ile şu komutlar kullanılmalıdır <br><br>
+python manage.py makemigrations <br><br>
+python manage.py migrate <br><br>
+python manage.py createsuper <br><br>
+python manage.py runserver <br><br>
+
+Daha sonra http://127.0.0.1:8000/ adresinden uygulamaya ulaşabilirsiniz
