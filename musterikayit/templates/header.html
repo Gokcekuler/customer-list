@@ -1,0 +1,30 @@
+<!-- Navbar Start -->
+<nav class="navbar navbar-default" role="banner">
+    <div class="container">
+
+        <nav class="collapse navbar-collapse" role="navigation">
+
+            <form class="navbar-form navbar-left" role="search" method="GET" action="">
+                <div class="input-group">
+                    <input class="form-control" type="text" name="q" placeholder="Arama" value=" {{ request.GET.q }} " >
+                    <span class="input-group-btn">
+                        <input class="btn btn-default" type="submit" value="Ara">
+                    </span>
+                </div>
+            </form>
+
+            <ul class="nav navbar-nav navbar-right">
+		{% if request.user.is_authenticated %} 
+			<li><a href="{% url 'create' %}">Yeni Müşteri Eklemek</a></li>
+		{% endif %}
+                <li><a href="{% url 'home' %}">Anasayfa</a></li>
+                <li><a href="{% url  'index' %} ">Musteri Listesi</a></li>
+            </ul>
+
+        </nav>
+
+    </div>
+</nav>
+
+
+

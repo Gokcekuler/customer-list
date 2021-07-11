@@ -1,21 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Title  </title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block body %}
 
 	{% for musteri in musteris %}
-		{{ musteri.id}}<br>
-		<a href="{{musteri.get_absolute_url}}">{{ musteri.tc}} </a><br>
-                {{ musteri.isim}}<br>
-                {{ musteri.soyisim}}<br>
-                {{ musteri.telefon}}<br>
-                {{ musteri.sehir}}<br>
-                {{ musteri.ilce}}<br>
+
+	<div class="row">
+	  <div class="col-sm-6 col-md-4">
+	    <div class="thumbnail">
+	      <div class="caption">
+		      <h3>{{ musteri.isim}} {{ musteri.soyisim}} </h3>
+	        <p><a href="{{musteri.get_absolute_url}}" class="btn btn-primary" role="button">Incele</a> 
+		{% if request.user.is_authenticated %}
+		<p><a href="{{musteri.get_update_url}}" class="btn btn-primary" role="button">Güncelle</a>
+		<p><a href="{{musteri.get_delete_url}}" class="btn btn-primary" role="button">Sil</a>
+		{% endif %}
+	      </div>
+	    </div>
+	  </div>
+	</div>
 	{% endfor %}
-	
+
     <div class="row">
 	    <div class="col-md-6 col-md-offset-3">
 		<div class="pagination">
@@ -36,6 +40,7 @@
 	</div>
     </div>	
 
+    {% endblock %}
 </body>
 </html>
 
