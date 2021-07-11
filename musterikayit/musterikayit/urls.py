@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from home.views import home_view
 from django.conf.urls import include
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',home_view),
-    path('musteri/', include('musteri.urls'))
+    path('',home_view, name='home'),
+    path('musteri/', include('musteri.urls')),
 
-] 
+]

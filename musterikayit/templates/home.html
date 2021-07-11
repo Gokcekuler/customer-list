@@ -1,26 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title> Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-	Merhaba {{isim}}, kayıtları listelemek için <br>
-	http://127.0.0.1:8000/musteri/index/ <br>
-	admin sayfası için  <br>
-	http://127.0.0.1:8000/admin/ <br>
-	kayıt eklemek için <br>
-	http://127.0.0.1:8000/musteri/create/ <br>
-	güncellemek için <br>
-	http://127.0.0.1:8000/musteri/9/update/ <br>
-	buradaki 9 örnek olarak verilmiş olup güncellenmek istenilen id numarası belirtilmelidir.Bazı id numaraları (3,4,5,7,8) delete metodu kontrolü için silinmiştir. <br>
-	silmek için <br>
-	http://127.0.0.1:8000/musteri/9/delete/ <br>
-	buradaki 9 yerine istenilen id numarası verilerek silme işlemi gerçekleştirilebilir <br>
+{% block title %} Anasayfa- {{ block.super }} {% endblock %}
 
+{% block body %}
 
-</body>
-</html>
+Merhaba {{isim}}, müşteri kayıt formunda kayıtlara müşteri listesi kısmından ulaşabilirsiniz. Değişiklik yapmak istediğiniz kayıtları güncelle bölümünden değiştirebilir, kayıt silmek isterseniz ise sil bölümünü kullanabilirsiniz. Ayrıca kayıtların altında bulunan incele kısmından kayıtlar hakkındaki detaylara ulaşabilirsiniz.<br> <br>
+Yeni bir kayıt eklemek için üst tarafta bulunan Yeni Müşteri Ekle bölümünü kullanabilirsiniz.<br> <br>
+Kayıtlarda arama yapabilmek için müşteri listesi sayfasındayken yukarıdaki arama alanını kullanabilirsiniz. İsim, soyisim, tc no, cep telefonu, şehir ve ilçe ismine göre arama yapılabilmektedir. Arama yaparken kelimenin başında ve sonunda boşluk bırakılmadığına dikkat edilmelidir. <br> <br>
+Kayıt formunda değişiklik yapabilmek için sisteme giriş yapmış durumda olmalısınız. <br>
+
+{%endblock %}
 
 
